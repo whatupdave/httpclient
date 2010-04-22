@@ -499,7 +499,7 @@ class HTTPClient
       case state
       when :init
         authenticator = param[:authenticator] = Win32::SSPI::NegotiateAuth.new
-        return authenticator.get_initial_token(@scheme)
+        return authenticator.get_initial_token
       when :response
         @challenge.delete(domain_uri)
         return authenticator.complete_authentication(authphrase)
